@@ -1,0 +1,83 @@
+int r = 0;
+int g = 0;
+int b = 0;
+//variables for changing the stroke of the line to be customizable
+
+void setup() {
+  size(1000,900);
+  background(0);
+  strokeWeight(5);
+}
+
+void draw() {
+  //press d to draw
+  if(keyPressed) {
+    if(key == 'd' || key == 'D') {
+      stroke(r,g,b);
+      line(mouseX,mouseY,pmouseX,pmouseY);
+    }
+  }
+      //pressing r increases how red the line is and pressing z decreases it
+      if(keyPressed) {
+        if(key == 'r' || key == 'r') {
+          r = r + 1;
+          if(r > 255) {
+            r = 255;
+          }
+        }
+      }
+      if(keyPressed) {
+        if(key == 'R' || key == 'R') {
+          r = r - 1;
+          if(r < 0 ) {
+            r = 0;
+          }
+        }
+      }
+//pressing g increases how green the line is and pressing x decreases it
+if(keyPressed) {
+        if(key == 'g' || key == 'g') { 
+          g = g + 1;
+          if(g > 255) {
+            g = 255;
+          }
+        }
+      }
+      if(keyPressed) {
+        if(key == 'G' || key == 'G') {
+          g = g - 1;
+          if(g < 0 ) {
+            g = 0;
+          }
+        }
+      }
+//pressing b increases how blue the line is and pressing c decreases it
+if(keyPressed) {
+        if(key == 'b' || key == 'b') {
+          b = b + 1;
+          if(b > 255) {
+            b = 255;
+          }
+        }
+      }
+      if(keyPressed) {
+        if(key == 'B' || key == 'B') {
+          b = b - 1;
+          if(b < 0 ) {
+            b = 0;
+          }
+        }
+      }
+      //press the mouse to erase
+      if(mousePressed == true) {
+        stroke(0);
+        fill(0);
+        rect(mouseX,mouseY,20,20);
+      }
+      // press shift to erase all
+if(keyPressed) {
+  if(key == 'e' || key == 'E') {
+    background(0);
+ }
+}
+}
